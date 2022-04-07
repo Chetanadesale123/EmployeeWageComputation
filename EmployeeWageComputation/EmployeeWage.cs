@@ -22,7 +22,7 @@ namespace EmployeeWageComputation
         }
         public void CalculateEmpWage()
         {
-            for (int i = 0; i < WORKING_DAYS_PER_MONTH; i++)
+            for (int i = 0; i < WORKING_DAYS_PER_MONTH && empHrs < 100; i++)
             {
 
                 Random random = new Random();
@@ -30,29 +30,19 @@ namespace EmployeeWageComputation
                 switch (check)
                 {
                     case IS_ABSENT:
-                        empHrs = 0;
+                        empHrs += 0;
                         break;
                     case IS_FULL_DAY_PRESENT:
-                        empHrs = FULL_DAY_HR;
+                        empHrs += FULL_DAY_HR;
                         break;
                     case IS_PART_TIME_PRESENT:
-                        empHrs = FULL_DAY_HR;
+                        empHrs += FULL_DAY_HR;
                         break;
 
                 }
-                totalEmpWage += empHrs * Wage_PER_HR;
             }
-            
-                Console.WriteLine("Total Emp Wage for a day"  +totalEmpWage);
-            
-
-
+            totalEmpWage = empHrs * Wage_PER_HR;
+            Console.WriteLine("Total Emp Wage for a day : " + totalEmpWage);
         }
-
-
-
-
-
-
     }
 }
