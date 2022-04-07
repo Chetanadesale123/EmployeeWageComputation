@@ -22,7 +22,7 @@ namespace EmployeeWageComputation
         }
         public void CalculateEmpWage()
         {
-            for (int i = 0; i < WORKING_DAYS_PER_MONTH && empHrs < 100; i++)
+            for (int i = 0; i < WORKING_DAYS_PER_MONTH && empHrs<100; i++)
             {
 
                 Random random = new Random();
