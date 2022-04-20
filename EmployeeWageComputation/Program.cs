@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        EmployeeWage computation = new EmployeeWage();
-        computation.EmployeeAttendence();
-        computation.CalculateEmpWage("Infosys", 20, 25, 100);
-        computation.CalculateEmpWage("Wipro", 15, 20, 85);
+        EmployeeWage infosys = new EmployeeWage("Infosys", 20, 25, 100);
+        EmployeeWage wipro = new EmployeeWage("Wipro", 15, 20, 85);
+        infosys.CalculateEmpWage();
+        wipro.CalculateEmpWage();
     }
 }

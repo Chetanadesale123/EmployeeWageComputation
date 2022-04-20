@@ -10,6 +10,8 @@ namespace EmployeeWageComputation
     {
         const int IS_PRESENT = 1, IS_ABSENT = 0, FULL_DAY_HR = 8, PART_DAY_HR = 4, IS_FULL_DAY_PRESENT = 1, IS_PART_TIME_PRESENT = 2;
         int empHrs, totalEmpWage;
+        private string company;
+        private int wagePerHr, workingDaysPerMonth, maxHoursPerMonth;
         public void EmployeeAttendence()
         {
             Random random = new Random();
@@ -20,9 +22,16 @@ namespace EmployeeWageComputation
                 Console.WriteLine("Employee is Absent");
 
         }
-        public void CalculateEmpWage(string company, int wagePerHr, int workingDaysPerMonth, int maxHoursPerMonth)
+        public EmployeeWage(string company, int wagePerHr, int workingDaysPerMonth, int maxHoursPerMonth)
         {
-            for (int i = 0; i < workingDaysPerMonth && empHrs < maxHoursPerMonth; i++)
+            this.company = company;
+            this.wagePerHr = wagePerHr;
+            this.workingDaysPerMonth = workingDaysPerMonth;
+            this.maxHoursPerMonth = maxHoursPerMonth;
+        }
+        public void CalculateEmpWage()
+        {
+            for (int i = 0; i < this.workingDaysPerMonth && empHrs < this.maxHoursPerMonth; i++)
             {
                 Random random = new Random();
                 int check = random.Next(0, 3);
@@ -39,8 +48,8 @@ namespace EmployeeWageComputation
                         break;
                 }
             }
-            totalEmpWage = empHrs * wagePerHr;
-            Console.WriteLine("Total Emp Wage for company :" +company +" is : " + totalEmpWage);
+            totalEmpWage = empHrs * this.wagePerHr;
+            Console.WriteLine("Total Emp Wage for company :" +this.company +" is : " + totalEmpWage);
         }
     }
 }
