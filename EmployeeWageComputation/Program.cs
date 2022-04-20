@@ -6,6 +6,7 @@ class Program
     {
         EmployeeWage computation = new EmployeeWage();
         computation.EmployeeAttendence();
-        computation.CalculateEmpWage();
+        computation.CalculateEmpWage("Infosys", 20, 25, 100);
+        computation.CalculateEmpWage("Wipro", 15, 20, 85);
     }
 }
