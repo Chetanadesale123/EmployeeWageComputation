@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation
 {
-    public class EmpWageBuilder
+    public class EmpWageBuilder : IComputeEmpWage
     {
 
         public const int IS_PART_TIME_PRESENT = 1;
@@ -42,8 +42,6 @@ namespace EmployeeWageComputation
                 int check = random.Next(0, 3);
                 switch (check)
                 {
-
-
                     case IS_FULL_DAY_PRESENT:
                         empHrs = 8;
                         break;
